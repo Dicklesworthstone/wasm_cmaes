@@ -1,3 +1,7 @@
 # Enable getrandom's wasm_js backend for wasm32-unknown-unknown
 [target.wasm32-unknown-unknown]
 rustflags = ['--cfg', 'getrandom_backend="wasm_js"']
+
+[build]
+# Parallel rustc front-end (nightly). Added by build-settings sweep.
+rustflags = ["-Z", "threads=4"]
